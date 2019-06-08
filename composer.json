@@ -3,7 +3,12 @@
     "description": "An object oriented approach to generating OpenAPI specs, implemented in PHP.",
     "type": "library",
     "license": "MIT",
-    "keywords": ["php", "laravel", "eloquent", "uuid"],
+    "keywords": [
+        "php",
+        "laravel",
+        "eloquent",
+        "uuid"
+    ],
     "homepage": "https://github.com/goldspecdigital/laravel-eloquent-uuid",
     "authors": [
         {
@@ -17,9 +22,9 @@
         }
     },
     "autoload-dev": {
-      "psr-4": {
-        "GoldSpecDigital\\LaravelEloquentUUID\\Tests\\": "tests/"
-      }
+        "psr-4": {
+            "GoldSpecDigital\\LaravelEloquentUUID\\Tests\\": "tests/"
+        }
     },
     "require": {
         "php": "^7.1.3",
