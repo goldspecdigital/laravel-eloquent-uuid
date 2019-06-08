@@ -55,7 +55,7 @@ abstract class Model extends BaseModel
     {
         parent::boot();
 
-        static::creating(function (self $model) {
+        static::creating(function (self $model): void {
             // Automatically generate a UUID if using them, and not provided.
             if ($model->keyIsUuid && empty($model->{$model->getKeyName()})) {
                 $model->{$model->getKeyName()} = Str::uuid()->toString();
