@@ -1,7 +1,8 @@
 /.idea
+/.phpunit.result.cache
 
-# Created by https://www.gitignore.io/api/macos,phpstorm,composer
-# Edit at https://www.gitignore.io/?templates=macos,phpstorm,composer
+# Created by https://www.gitignore.io/api/macos,phpstorm,composer,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=macos,phpstorm,composer,visualstudiocode
 
 ### Composer ###
 composer.phar
@@ -9,7 +10,7 @@ composer.phar
 
 # Commit your application's lock file https://getcomposer.org/doc/01-basic-usage.md#commit-your-composer-lock-file-to-version-control
 # You may choose to ignore a library lock file http://getcomposer.org/doc/02-libraries.md#lock-file
-# composer.lock
+composer.lock
 
 ### macOS ###
 # General
@@ -121,4 +122,15 @@ fabric.properties
 # Sonarlint plugin
 .idea/sonarlint
 
-# End of https://www.gitignore.io/api/macos,phpstorm,composer
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/macos,phpstorm,composer,visualstudiocode
