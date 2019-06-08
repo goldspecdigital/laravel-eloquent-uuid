@@ -1,4 +1,5 @@
 /.idea
+/.phpunit.result.cache
 
 # Created by https://www.gitignore.io/api/macos,phpstorm,composer,visualstudiocode
 # Edit at https://www.gitignore.io/?templates=macos,phpstorm,composer,visualstudiocode

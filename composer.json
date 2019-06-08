@@ -18,16 +18,17 @@
     },
     "autoload-dev": {
       "psr-4": {
-        "GoldSpecDigital\\LaravelEloquentUUID\\Tests\\": "test/"
+        "GoldSpecDigital\\LaravelEloquentUUID\\Tests\\": "tests/"
       }
     },
     "require": {
         "php": ">=7.1.0",
-        "illuminate/database": "~5.8.0",
-        "illuminate/support": "~5.8.0"
+        "laravel/framework": "~5.8.0"
     },
     "require-dev": {
+        "ext-pdo": "*",
         "friendsofphp/php-cs-fixer": "^2.15",
+        "orchestra/testbench": "^3.5",
         "phpunit/phpunit": "^8.2"
     },
     "config": {
