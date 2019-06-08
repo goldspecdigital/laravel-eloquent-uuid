@@ -88,6 +88,24 @@ class User extends Authenticatable
 }
 ```
 
+### Generating UUIDs
+
+If you don't specify the value for the primary key of your model, a UUIDv4 will
+be automatically generated. However, if you do specify your own UUIDv4 then it
+will not generate one, but instead use the one you have explicity provided. This
+can be useful when needing the know the ID of the model before you have created
+it:
+
+```php
+// No UUID provided (automatically generated).
+$model = Model::create();
+echo $model->id;  // abb034ae-fcdc-4200-8094-582b60a4281f
+
+// UUID explicity provided.
+$model = Model::create(['id' => '04d7f995-ef33-4870-a214-4e21c51ff76e']);
+echo $model->id; // 04d7f995-ef33-4870-a214-4e21c51ff76e
+```
+
 ## Running the tests
 
 To run the test suite you can use the following commands:
