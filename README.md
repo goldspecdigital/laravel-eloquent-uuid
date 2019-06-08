@@ -99,7 +99,7 @@ it:
 ```php
 // No UUID provided (automatically generated).
 $model = Model::create();
-echo $model->id;  // abb034ae-fcdc-4200-8094-582b60a4281f
+echo $model->id; // abb034ae-fcdc-4200-8094-582b60a4281f
 
 // UUID explicity provided.
 $model = Model::create(['id' => '04d7f995-ef33-4870-a214-4e21c51ff76e']);
