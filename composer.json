@@ -1,6 +1,6 @@
 {
     "name": "goldspecdigital/laravel-eloquent-uuid",
-    "description": "An object oriented approach to generating OpenAPI specs, implemented in PHP.",
+    "description": "A simple drop-in solution for providing UUIDv4 support for the IDs of your Eloquent models.",
     "type": "library",
     "license": "MIT",
     "keywords": [
