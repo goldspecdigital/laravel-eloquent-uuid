@@ -92,7 +92,7 @@ class User extends Authenticatable
 
 If you don't specify the value for the primary key of your model, a UUIDv4 will
 be automatically generated. However, if you do specify your own UUIDv4 then it
-will not generate one, but instead use the one you have explicity provided. This
+will not generate one, but instead use the one you have explicitly provided. This
 can be useful when needing the know the ID of the model before you have created
 it:
 
