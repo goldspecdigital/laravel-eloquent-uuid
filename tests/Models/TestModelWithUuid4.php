@@ -6,12 +6,12 @@ namespace GoldSpecDigital\LaravelEloquentUUID\Tests\Models;
 
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
-class TestModelWithoutUuid extends Model
+class TestModelWithUuid4 extends Model
 {
     /**
-     * Indicates if the IDs are UUIDs.
+     * The table associated with the model.
      *
-     * @var bool
+     * @var string
      */
-    protected $keyIsUuid = false;
+    protected $table = 'test_model_with_uuids';
 }
