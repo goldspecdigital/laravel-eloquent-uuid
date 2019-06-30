@@ -1,6 +1,6 @@
 {
     "name": "goldspecdigital/laravel-eloquent-uuid",
-    "description": "A simple drop-in solution for providing UUIDv4 support for the IDs of your Eloquent models.",
+    "description": "A simple drop-in solution for providing UUID support for the IDs of your Eloquent models.",
     "type": "library",
     "license": "MIT",
     "keywords": [
@@ -41,11 +41,11 @@
     },
     "scripts": {
         "test": [
-            "@php vendor/bin/php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run --diff --verbose --using-cache=no",
-            "@php vendor/bin/phpunit"
+            "@test:style",
+            "@test:unit"
         ],
-        "test:style": "@php vendor/bin/php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run --diff --verbose --using-cache=no",
+        "test:style": "@php vendor/bin/php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run --diff --verbose",
         "test:unit": "@php vendor/bin/phpunit",
-        "fix:style": "@php vendor/bin/php-cs-fixer fix --config=.php_cs --allow-risky=yes --diff --verbose --using-cache=no"
+        "fix:style": "@php vendor/bin/php-cs-fixer fix --config=.php_cs --allow-risky=yes --diff --verbose"
     }
 }
