@@ -37,15 +37,25 @@
 
 ## Introduction
 
-A simple drop-in solution for providing UUIDv4 support for the IDs of your
+A simple drop-in solution for providing UUID support for the IDs of your
 Eloquent models.
 
+Both `v1` and `v4` IDs are supported out of the box, however should you need 
+`v3` or `v5` support, you can easily add this in.
+
 ## Installing
+
+Reference the table below for the correct version to use in conjunction with the
+version of Laravel you have installed:
+
+| Laravel | This package |
+| ------- | ------------ |
+| `v5.8.*` | `v1.*` |
 
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid
+composer require goldspecdigital/laravel-eloquent-uuid:~v1.1
 ```
 
 ## Usage
@@ -90,8 +100,8 @@ class User extends Authenticatable
 
 ### Generating UUIDs
 
-If you don't specify the value for the primary key of your model, a UUIDv4 will
-be automatically generated. However, if you do specify your own UUIDv4 then it
+If you don't specify the value for the primary key of your model, a UUID will
+be automatically generated. However, if you do specify your own UUID then it
 will not generate one, but instead use the one you have explicitly provided. This
 can be useful when needing the know the ID of the model before you have created
 it:
@@ -104,6 +114,56 @@ echo $model->id; // abb034ae-fcdc-4200-8094-582b60a4281f
 // UUID explicity provided.
 $model = Model::create(['id' => '04d7f995-ef33-4870-a214-4e21c51ff76e']);
 echo $model->id; // 04d7f995-ef33-4870-a214-4e21c51ff76e
+```
+
+### Specifying UUID versions
+
+By default, `v4` UUIDs will be used for your models. However, you can also 
+specify `v1` UUIDs to be used by setting the following property on your model:
+
+```php
+<?php
+
+namespace App\Models;
+
+use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
+
+class BlogPost extends Model
+{
+    /**
+     * The UUID version to use.
+     *
+     * @var int
+     */
+    protected $uuidVersion = 1;
+}
+```
+
+#### Support for `v3` and `v5`
+
+Should you need support for `v3` or `v5` UUIDs, you can simply override the
+method which is responsible for generating the UUIDs:
+
+```php
+<?php
+
+namespace App\Models;
+
+use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
+use Ramsey\Uuid\Uuid;
+
+class BlogPost extends Model
+{
+    /**
+     * @throws \Exception
+     * @return string
+     */
+    protected function generateUuid(): string
+    {
+        // UUIDv3 has been used here, but you can also use UUIDv5.
+        return Uuid::uuid3(Uuid::NAMESPACE_DNS, 'example.com')->toString();
+    }
+}
 ```
 
 ## Running the tests
