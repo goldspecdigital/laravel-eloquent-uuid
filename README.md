@@ -56,7 +56,7 @@ version of Laravel you have installed:
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid:~v1.1
+composer require goldspecdigital/laravel-eloquent-uuid:~v6.0
 ```
 
 ## Usage
