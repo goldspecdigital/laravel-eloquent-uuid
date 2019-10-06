@@ -51,12 +51,12 @@ version of Laravel you have installed:
 | Laravel | This package |
 | ------- | ------------ |
 | `v5.8.*` | `v1.*` |
-| `v6.0.*` | `v6.0.*` |
+| `v6.*` | `v6.*` |
 
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid:~v6.0
+composer require goldspecdigital/laravel-eloquent-uuid:^v6.0
 ```
 
 ## Usage
