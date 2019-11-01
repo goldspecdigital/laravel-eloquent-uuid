@@ -59,6 +59,15 @@ You can install the package via composer:
 composer require goldspecdigital/laravel-eloquent-uuid:^v6.0
 ```
 
+If you want to use command `php artisan uuid:make:model` you should register
+```php
+/*
+ * Package Service Providers...
+ */
+GoldSpecDigital\LaravelEloquentUUID\UuidServiceProvider::class,
+```
+in `config/app.php`.
+
 ## Usage
 
 When creating a Eloquent model, instead of extending the standard Laravel model
