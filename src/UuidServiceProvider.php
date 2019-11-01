@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GoldSpecDigital\LaravelEloquentUUID;
 
-use Illuminate\Support\ServiceProvider;
 use GoldSpecDigital\LaravelEloquentUUID\Console\UuidModelCommand;
+use Illuminate\Support\ServiceProvider;
 
 class UuidServiceProvider extends ServiceProvider
 {

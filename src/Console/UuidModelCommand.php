@@ -1,8 +1,9 @@
 <?php
 
+declare(strict_types=1);
+
 namespace GoldSpecDigital\LaravelEloquentUUID\Console;
 
-use Illuminate\Filesystem\Filesystem;
 use Illuminate\Console\GeneratorCommand;
 
 class UuidModelCommand extends GeneratorCommand
@@ -41,11 +42,11 @@ class UuidModelCommand extends GeneratorCommand
     /**
      * Get the default namespace for the class.
      *
-     * @param  string  $rootNamespace
+     * @param string $rootNamespace
      * @return string
      */
     protected function getDefaultNamespace($rootNamespace)
     {
-        return $rootNamespace.'\Models';
+        return $rootNamespace . '\Models';
     }
 }
