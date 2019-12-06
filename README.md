@@ -59,15 +59,6 @@ You can install the package via composer:
 composer require goldspecdigital/laravel-eloquent-uuid:^v6.0
 ```
 
-If you want to use command `php artisan uuid:make:model` you should register
-```php
-/*
- * Package Service Providers...
- */
-GoldSpecDigital\LaravelEloquentUUID\UuidServiceProvider::class,
-```
-in `config/app.php`.
-
 ## Usage
 
 When creating a Eloquent model, instead of extending the standard Laravel model
@@ -174,6 +165,16 @@ class BlogPost extends Model
         return Uuid::uuid3(Uuid::NAMESPACE_DNS, 'example.com')->toString();
     }
 }
+```
+
+### Creating models
+
+In addition of the `make:model` artisan command, you will now have access to
+`uuid:make:model` which has all the functionality of the standard `make:model`
+command (with exception of not being able to create a pivot model):
+
+```bash
+php artisan uuid:make:model Models/Post --all
 ```
 
 ## Running the tests
