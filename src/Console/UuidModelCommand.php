@@ -4,12 +4,12 @@ declare(strict_types=1);
 
 namespace GoldSpecDigital\LaravelEloquentUUID\Console;
 
-use Illuminate\Console\GeneratorCommand;
+use Illuminate\Foundation\Console\ModelMakeCommand;
 
-class UuidModelCommand extends GeneratorCommand
+class UuidModelCommand extends ModelMakeCommand
 {
     /**
-     * The name and signature of the console command.
+     * The console command name.
      *
      * @var string
      */
@@ -20,7 +20,7 @@ class UuidModelCommand extends GeneratorCommand
      *
      * @var string
      */
-    protected $description = 'Create a new UUID Model';
+    protected $description = 'Create a new Eloquent UUID model class';
 
     /**
      * The type of class being generated.
@@ -34,19 +34,39 @@ class UuidModelCommand extends GeneratorCommand
      *
      * @return string
      */
-    protected function getStub()
+    protected function getStub(): string
     {
-        return realpath(__DIR__ . '/Stubs/UUID.stub');
+        return __DIR__ . '/stubs/model.stub';
     }
 
     /**
-     * Get the default namespace for the class.
+     * Get the console command options.
      *
-     * @param string $rootNamespace
-     * @return string
+     * @return array
      */
-    protected function getDefaultNamespace($rootNamespace)
+    protected function getOptions(): array
     {
-        return $rootNamespace . '\Models';
+        // Remove the pivot option from the parent class.
+        return array_filter(
+            parent::getOptions(),
+            function (array $option): bool {
+                return $option[0] !== 'pivot';
+            }
+        );
+    }
+
+    /**
+     * Get the value of a command option.
+     *
+     * @param string|null $key
+     * @return string|array|bool|null
+     */
+    public function option($key = null)
+    {
+        if ($key === 'pivot') {
+            return false;
+        }
+
+        return parent::option($key);
     }
 }
