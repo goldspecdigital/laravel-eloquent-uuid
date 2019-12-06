@@ -9,7 +9,10 @@ use Illuminate\Support\ServiceProvider;
 
 class UuidServiceProvider extends ServiceProvider
 {
-    public function boot()
+    /**
+     * Bootstrap any application services.
+     */
+    public function boot(): void
     {
         if ($this->app->runningInConsole()) {
             $this->commands([
