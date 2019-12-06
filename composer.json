@@ -47,5 +47,12 @@
         "test:style": "php-cs-fixer fix --config=.php_cs --allow-risky=yes --dry-run --diff --verbose",
         "test:unit": "phpunit",
         "fix:style": "php-cs-fixer fix --config=.php_cs --allow-risky=yes --diff --verbose"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "GoldSpecDigital\\LaravelEloquentUUID\\UuidServiceProvider"
+            ]
+        }
     }
 }

@@ -167,6 +167,16 @@ class BlogPost extends Model
 }
 ```
 
+### Creating models
+
+In addition of the `make:model` artisan command, you will now have access to
+`uuid:make:model` which has all the functionality of the standard `make:model`
+command (with exception of not being able to create a pivot model):
+
+```bash
+php artisan uuid:make:model Models/Post --all
+```
+
 ## Running the tests
 
 To run the test suite you can use the following commands:
