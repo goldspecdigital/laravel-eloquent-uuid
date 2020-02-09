@@ -36,7 +36,7 @@ class UuidModelCommand extends ModelMakeCommand
      */
     protected function getStub(): string
     {
-        return __DIR__ . '/stubs/model.stub';
+        return realpath(__DIR__ . '/Stubs/model.stub');
     }
 
     /**
