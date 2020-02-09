@@ -177,6 +177,52 @@ command (with exception of not being able to create a pivot model):
 php artisan uuid:make:model Models/Post --all
 ```
 
+### Database migrations
+
+The default primary ID column used in migrations will not work with UUID primary
+keys, as the default column type is an unsigned integer. UUIDs are 36 character 
+strings so we must specify this in our migrations:
+
+```php
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+class CreateUsersTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('users', function (Blueprint $table): void {
+            // Primary key.
+            $table->uuid('id')->primary();
+        });
+    }
+}
+
+class CreatePostsTable extends Migration
+{
+    /**
+     * Run the migrations.
+     */
+    public function up(): void
+    {
+        Schema::create('posts', function (Blueprint $table): void {
+            // Primary key.
+            $table->uuid('id')->primary();
+        
+            // Foreign key.
+            $table->uuid('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
+        });
+    }
+}
+```
+
 ## Running the tests
 
 To run the test suite you can use the following commands:
