@@ -56,10 +56,16 @@ version of Laravel you have installed:
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid:^v6.1
+composer require goldspecdigital/laravel-eloquent-uuid:^v6.2
 ```
 
 ## Usage
+
+There are two ways to use this package:
+1. By extending the provided model classes (preferred and simplest method).
+2. By using the provided model trait (allows for extending another model class).
+
+### Extending model
 
 When creating a Eloquent model, instead of extending the standard Laravel model
 class, extend from the model class provided by this package:
@@ -77,7 +83,7 @@ class BlogPost extends Model
 }
 ```
 
-### User model
+### Extending user model
 
 The User model that comes with a standard Laravel install has some extra
 configuration which is implemented in its parent class. This configuration only
@@ -99,13 +105,54 @@ class User extends Authenticatable
 }
 ```
 
+### Using trait
+
+As an alternative to extending the classes in the examples above, you also have
+the ability to use the provided trait instead. This requires a more involved
+setup process but allows you to extend your models from another class if needed:
+
+```php
+<?php
+
+namespace App\Models;
+
+use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
+use Illuminate\Database\Eloquent\Model;
+
+class BlogPost extends Model
+{
+    use Uuid;
+    
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $guarded = [];
+}
+```
+
 ### Generating UUIDs
 
 If you don't specify the value for the primary key of your model, a UUID will
 be automatically generated. However, if you do specify your own UUID then it
-will not generate one, but instead use the one you have explicitly provided. This
-can be useful when needing the know the ID of the model before you have created
-it:
+will not generate one, but instead use the one you have explicitly provided. 
+This can be useful when needing the know the ID of the model before you have 
+created it:
 
 ```php
 // No UUID provided (automatically generated).
@@ -120,7 +167,10 @@ echo $model->id; // 04d7f995-ef33-4870-a214-4e21c51ff76e
 ### Specifying UUID versions
 
 By default, `v4` UUIDs will be used for your models. However, you can also 
-specify `v1` UUIDs to be used by setting the following property on your model:
+specify `v1` UUIDs to be used by setting the following property/method on your 
+model:
+
+#### When extending the class
 
 ```php
 <?php
@@ -137,6 +187,32 @@ class BlogPost extends Model
      * @var int
      */
     protected $uuidVersion = 1;
+}
+```
+
+#### When using the trait
+
+```php
+<?php
+
+namespace App\Models;
+
+use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Uuid;
+use Illuminate\Database\Eloquent\Model;
+
+class BlogPost extends Model
+{
+    use Uuid;
+
+    /**
+     * The UUID version to use.
+     *
+     * @return int
+     */
+    protected function uuidVersion(): int
+    {
+        return 1;
+    }
 }
 ```
 
