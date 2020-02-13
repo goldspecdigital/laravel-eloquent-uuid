@@ -4,18 +4,18 @@ declare(strict_types=1);
 
 namespace GoldSpecDigital\LaravelEloquentUUID\Tests\Database\Eloquent;
 
-use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid1;
-use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid4;
+use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid1;
+use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid4;
 use GoldSpecDigital\LaravelEloquentUUID\Tests\TestCase;
 use Illuminate\Support\Str;
 
-class ModelWithUuidTest extends TestCase
+class ModelUsingTraitWithUuidTest extends TestCase
 {
     /** @test */
     public function it_generates_a_uuid1_when_the_id_has_not_been_set(): void
     {
-        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid1 $testModel */
-        $testModel = TestModelWithUuid1::query()->create();
+        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid1 $testModel */
+        $testModel = TestModelUsingTraitWithUuid1::query()->create();
 
         $this->assertEquals(36, mb_strlen($testModel->id));
     }
@@ -23,8 +23,8 @@ class ModelWithUuidTest extends TestCase
     /** @test */
     public function it_generates_a_uuid4_when_the_id_has_not_been_set(): void
     {
-        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid4 $testModel */
-        $testModel = TestModelWithUuid4::query()->create();
+        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid4 $testModel */
+        $testModel = TestModelUsingTraitWithUuid4::query()->create();
 
         $this->assertEquals(36, mb_strlen($testModel->id));
     }
@@ -34,8 +34,8 @@ class ModelWithUuidTest extends TestCase
     {
         $uuid = Str::uuid()->toString();
 
-        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid1 $testModel */
-        $testModel = TestModelWithUuid1::query()->create([
+        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid1 $testModel */
+        $testModel = TestModelUsingTraitWithUuid1::query()->create([
             'id' => $uuid,
         ]);
 
@@ -47,8 +47,8 @@ class ModelWithUuidTest extends TestCase
     {
         $uuid = Str::uuid()->toString();
 
-        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelWithUuid4 $testModel */
-        $testModel = TestModelWithUuid4::query()->create([
+        /** @var \GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithUuid4 $testModel */
+        $testModel = TestModelUsingTraitWithUuid4::query()->create([
             'id' => $uuid,
         ]);
 

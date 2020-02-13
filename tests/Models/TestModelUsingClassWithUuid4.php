@@ -6,7 +6,7 @@ namespace GoldSpecDigital\LaravelEloquentUUID\Tests\Models;
 
 use GoldSpecDigital\LaravelEloquentUUID\Database\Eloquent\Model;
 
-class TestModelWithUuid4 extends Model
+class TestModelUsingClassWithUuid4 extends Model
 {
     /**
      * The table associated with the model.
