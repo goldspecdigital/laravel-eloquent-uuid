@@ -27,14 +27,14 @@
         }
     },
     "require": {
-        "php": "^7.2",
-        "laravel/framework": "^6.0"
+        "php": "^7.2.5",
+        "laravel/framework": "^7.0"
     },
     "require-dev": {
         "ext-pdo": "*",
         "friendsofphp/php-cs-fixer": "^2.15",
-        "orchestra/testbench": "^4.0",
-        "phpunit/phpunit": "^8.0"
+        "orchestra/testbench": "^5.0",
+        "phpunit/phpunit": "^8.4"
     },
     "config": {
         "sort-packages": true
