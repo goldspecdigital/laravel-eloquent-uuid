@@ -9,7 +9,6 @@ language: php
 
 # The versions of PHP to run builds against.
 php:
-  - "7.2"
   - "7.3"
   - "7.4"
 
