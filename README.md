@@ -303,24 +303,10 @@ class CreatePostsTable extends Migration
 
 ## Running the tests
 
-To run the test suite you can use the following commands:
+To run the test suite you can use the following command:
 
 ```bash
-# To run both style and unit tests.
 composer test
-
-# To run only style tests.
-composer test:style
-
-# To run only unit tests.
-composer test:unit
-```
-
-If you receive any errors from the style tests, you can automatically fix most,
-if not all of the issues with the following command:
-
-```bash
-composer fix:style
 ```
 
 ## Contributing
