@@ -11,6 +11,7 @@ language: php
 php:
   - "7.3"
   - "7.4"
+  - "8.0"
 
 # Cache the vendor directory for quicker builds.
 cache:
@@ -24,5 +25,4 @@ install:
 
 # Run the code style and unit tests.
 script:
-  - composer test:style
-  - composer test:unit
+  - composer test
