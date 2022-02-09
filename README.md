@@ -54,11 +54,12 @@ version of Laravel you have installed:
 | `v6.*` | `v6.*` |
 | `v7.*` | `v7.*` |
 | `v8.*` | `v8.*` |
+| `v9.*` | `v9.*` |
 
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid:^8.0
+composer require goldspecdigital/laravel-eloquent-uuid:^9.0
 ```
 
 ## Usage
@@ -188,7 +189,7 @@ class BlogPost extends Model
      *
      * @var int
      */
-    protected $uuidVersion = 1;
+    protected int $uuidVersion = 1;
 }
 ```
 

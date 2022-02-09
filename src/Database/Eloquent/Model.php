@@ -22,14 +22,14 @@ abstract class Model extends BaseModel
      *
      * @var bool
      */
-    protected $keyIsUuid = true;
+    protected bool $keyIsUuid = true;
 
     /**
      * The UUID version to use.
      *
      * @var int
      */
-    protected $uuidVersion = 4;
+    protected int $uuidVersion = 4;
 
     /**
      * Indicates if the IDs are auto-incrementing.
