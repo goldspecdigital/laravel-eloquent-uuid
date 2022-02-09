@@ -20,5 +20,5 @@ class TestModelExtendingClassWithoutUuid4 extends Model
      *
      * @var bool
      */
-    protected $keyIsUuid = false;
+    protected bool $keyIsUuid = false;
 }

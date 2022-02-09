@@ -20,12 +20,12 @@ class TestModelExtendingClassWithoutUuid1 extends Model
      *
      * @var bool
      */
-    protected $keyIsUuid = false;
+    protected bool $keyIsUuid = false;
 
     /**
      * The UUID version to use.
      *
      * @var int
      */
-    protected $uuidVersion = 1;
+    protected int $uuidVersion = 1;
 }
