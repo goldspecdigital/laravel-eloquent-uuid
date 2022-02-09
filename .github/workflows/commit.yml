@@ -1,0 +1,31 @@
+name: Commit
+
+on: push
+
+jobs:
+  build_and_test:
+    name: Get Build Version
+
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        php: [8.0, 8.1]
+
+    steps:
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: "${{ matrix.php }}"
+
+      - name: Checkout current commit
+        uses: actions/checkout@v2.3.4
+
+      - name: Update composer
+        run: composer self-update
+
+      - name: Install composer dependencies
+        run: composer install --no-interaction
+
+      - name: Test
+        run: composer test
