@@ -17,9 +17,9 @@
         alt="GitHub tag (latest SemVer)"
         src="https://img.shields.io/github/tag/goldspecdigital/laravel-eloquent-uuid.svg"
     ></a>
-    <a href="https://travis-ci.com/goldspecdigital/laravel-eloquent-uuid"><img
+    <a href="https://github.com/goldspecdigital/laravel-eloquent-uuid/actions/workflows/tests.yml"><img
         alt="Build status"
-        src="https://travis-ci.com/goldspecdigital/laravel-eloquent-uuid.svg?branch=master"
+        src="https://github.com/goldspecdigital/laravel-eloquent-uuid/actions/workflows/tests.yml/badge.svg?branch=master"
     ></a>
     <a href="https://packagist.org/packages/goldspecdigital/laravel-eloquent-uuid"><img
         alt="Packagist"

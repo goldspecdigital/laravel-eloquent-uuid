@@ -1,10 +1,10 @@
-name: Commit
+name: Tests
 
 on: push
 
 jobs:
-  test:
-    name: Test
+  build_and_test:
+    name: Build and test
 
     runs-on: ubuntu-20.04
 
