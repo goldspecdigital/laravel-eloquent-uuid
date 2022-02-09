@@ -3,8 +3,8 @@ name: Commit
 on: push
 
 jobs:
-  build_and_test:
-    name: Get Build Version
+  test:
+    name: Test
 
     runs-on: ubuntu-20.04
 
