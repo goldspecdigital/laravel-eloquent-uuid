@@ -21,5 +21,5 @@ class TestModelExtendingClassWithUuid6 extends Model
      *
      * @var int
      */
-    protected int $uuidVersion = 1;
+    protected int $uuidVersion = 6;
 }
