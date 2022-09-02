@@ -170,7 +170,7 @@ echo $model->id; // 04d7f995-ef33-4870-a214-4e21c51ff76e
 ### Specifying UUID versions
 
 By default, `v4` UUIDs will be used for your models. However, you can also 
-specify `v1` UUIDs to be used by setting the following property/method on your 
+specify `v1` or `v6` UUIDs to be used by setting the following property/method on your 
 model:
 
 #### When extending the class
@@ -218,6 +218,22 @@ class BlogPost extends Model
     }
 }
 ```
+
+#### About `v6`
+> Version 6, ordered-time UUIDs are an experimental feature based on an Internet-Draft
+> under review at the IETF. While the basic layout is not expected to change, be aware
+> that the draft is a moving target. If there are significant changes to the layout,
+> ramsey/uuid will attempt to maintain backward compatibility but cannot guarantee it.
+
+Version 6 UUIDs solve two problems that have long existed with the use of version 1 UUIDs:
+
+- Scattered database records
+- Inability to sort by an identifier in a meaningful way (i.e., insert order)
+
+To overcome these issues, we need the ability to generate UUIDs that are monotonically
+increasing while still providing all the benefits of version 1 UUIDs.
+
+[Read more here](https://uuid.ramsey.dev/en/4.3.0/nonstandard/version6.html)
 
 #### Support for `v3` and `v5`
 
