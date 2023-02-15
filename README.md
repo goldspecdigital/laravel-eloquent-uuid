@@ -48,18 +48,19 @@ Both `v1` and `v4` IDs are supported out of the box, however should you need
 Reference the table below for the correct version to use in conjunction with the
 version of Laravel you have installed:
 
-| Laravel | This package |
-| ------- | ------------ |
-| `v5.8.*` | `v1.*` |
-| `v6.*` | `v6.*` |
-| `v7.*` | `v7.*` |
-| `v8.*` | `v8.*` |
-| `v9.*` | `v9.*` |
+| Laravel  | This package |
+|----------|--------------|
+| `v5.8.*` | `v1.*`       |
+| `v6.*`   | `v6.*`       |
+| `v7.*`   | `v7.*`       |
+| `v8.*`   | `v8.*`       |
+| `v9.*`   | `v9.*`       |
+| `v10.*`  | `v10.*`      |
 
 You can install the package via composer:
 
 ```bash
-composer require goldspecdigital/laravel-eloquent-uuid:^9.0
+composer require goldspecdigital/laravel-eloquent-uuid:^10.0
 ```
 
 ## Usage
