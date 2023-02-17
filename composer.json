@@ -33,7 +33,7 @@
     "require-dev": {
         "ext-pdo": "*",
         "orchestra/testbench": "^8.0",
-        "phpunit/phpunit": "^9.6.0"
+        "phpunit/phpunit": "^10.0"
     },
     "config": {
         "sort-packages": true
