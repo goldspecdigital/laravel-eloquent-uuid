@@ -1,22 +1,16 @@
-<phpunit
-    bootstrap="vendor/autoload.php"
-    colors="true"
-    convertErrorsToExceptions="true"
-    convertNoticesToExceptions="true"
-    convertWarningsToExceptions="true"
-    stopOnFailure="true"
->
-    <testsuites>
-        <testsuite name="GoldSpec Digital Test Suite">
-            <directory>tests</directory>
-        </testsuite>
-    </testsuites>
-    <filter>
-        <whitelist>
-            <directory suffix=".php">src/</directory>
-        </whitelist>
-    </filter>
-    <php>
-        <env name="DB_CONNECTION" value="testing"/>
-    </php>
+<?xml version="1.0"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="vendor/autoload.php" colors="true" stopOnFailure="true" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/10.0/phpunit.xsd" cacheDirectory=".phpunit.cache">
+  <coverage>
+    <include>
+      <directory suffix=".php">src/</directory>
+    </include>
+  </coverage>
+  <testsuites>
+    <testsuite name="GoldSpec Digital Test Suite">
+      <directory>tests</directory>
+    </testsuite>
+  </testsuites>
+  <php>
+    <env name="DB_CONNECTION" value="testing"/>
+  </php>
 </phpunit>
