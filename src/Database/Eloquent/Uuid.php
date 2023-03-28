@@ -53,6 +53,8 @@ trait Uuid
                 return RamseyUuid::uuid1()->toString();
             case 4:
                 return RamseyUuid::uuid4()->toString();
+            case 7:
+                return RamseyUuid::uuid7()->toString();
         }
 
         throw new Exception("UUID version [{$this->uuidVersion()}] not supported.");

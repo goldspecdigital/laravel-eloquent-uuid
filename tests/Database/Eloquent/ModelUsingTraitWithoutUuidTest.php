@@ -6,6 +6,7 @@ namespace GoldSpecDigital\LaravelEloquentUUID\Tests\Database\Eloquent;
 
 use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithoutUuid1;
 use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithoutUuid4;
+use GoldSpecDigital\LaravelEloquentUUID\Tests\Models\TestModelUsingTraitWithoutUuid7;
 use GoldSpecDigital\LaravelEloquentUUID\Tests\TestCase;
 use PDOException;
 
@@ -25,5 +26,12 @@ class ModelUsingTraitWithoutUuidTest extends TestCase
         $this->expectException(PDOException::class);
 
         TestModelUsingTraitWithoutUuid4::query()->create();
+    }
+    /** @test */
+    public function it_does_not_generate_a_uuid7_when_no_id_has_been_set(): void
+    {
+        $this->expectException(PDOException::class);
+
+        TestModelUsingTraitWithoutUuid7::query()->create();
     }
 }

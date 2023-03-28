@@ -72,8 +72,8 @@ abstract class Model extends BaseModel
     }
 
     /**
-     * @throws \Exception
      * @return string
+     * @throws \Exception
      */
     protected function generateUuid(): string
     {
@@ -82,6 +82,8 @@ abstract class Model extends BaseModel
                 return Uuid::uuid1()->toString();
             case 4:
                 return Uuid::uuid4()->toString();
+            case 7:
+                return Uuid::uuid7()->toString();
         }
 
         throw new Exception("UUID version [{$this->uuidVersion}] not supported.");
